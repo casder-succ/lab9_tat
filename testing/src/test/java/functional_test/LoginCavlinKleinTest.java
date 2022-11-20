@@ -17,18 +17,25 @@ import java.time.Duration;
 public class LoginCavlinKleinTest {
     private WebDriver driver;
 
-    @BeforeMethod(alwaysRun = true)
-    void getDriver() {
+//    @BeforeMethod(alwaysRun = true)
+//    void getDriver() {
+//        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+//
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("--start-maximized");
+//
+//        driver = new ChromeDriver(chromeOptions);
+//    }
+
+    @Test(description = "Test empty wishlist")
+    void testHomePage() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
 
         driver = new ChromeDriver(chromeOptions);
-    }
 
-    @Test(description = "Test empty wishlist")
-    void testHomePage() throws InterruptedException {
         String TEST_ACCOUNT_EMAIL = "casderiopus1@gmail.com";
         String TEST_ACCOUNT_PASSWORD = "casdercasder";
 
@@ -60,11 +67,13 @@ public class LoginCavlinKleinTest {
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Looks like your wishlist is empty']")));
 
         Assert.assertTrue(emptyViewWrapper.isDisplayed());
-    }
-
-    @AfterMethod(alwaysRun = true)
-    void resetDriver() {
         driver.quit();
         driver = null;
     }
+
+//    @AfterMethod(alwaysRun = true)
+//    void resetDriver() {
+//        driver.quit();
+//        driver = null;
+//    }
 }
