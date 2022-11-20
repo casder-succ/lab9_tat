@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -31,10 +30,7 @@ public class LoginCavlinKleinTest {
     void testHomePage() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--start-maximized");
-
-        driver = new ChromeDriver(chromeOptions);
+        driver = new ChromeDriver();
 
         String TEST_ACCOUNT_EMAIL = "casderiopus1@gmail.com";
         String TEST_ACCOUNT_PASSWORD = "casdercasder";
