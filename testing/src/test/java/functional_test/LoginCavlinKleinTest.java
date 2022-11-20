@@ -32,12 +32,14 @@ public class LoginCavlinKleinTest {
     @Test(description = "Test empty wishlist")
     void testHomePage() {
 
-//        FirefoxBinary firefoxBinary = new FirefoxBinary();
-//        firefoxBinary.addCommandLineOptions("--headless");
-//        firefoxBinary.addCommandLineOptions("--no-sandbox");
+        FirefoxBinary firefoxBinary = new FirefoxBinary();
+        firefoxBinary.addCommandLineOptions("--headless");
+        firefoxBinary.addCommandLineOptions("--no-sandbox");
         System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
 
-        driver = new FirefoxDriver();
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+        firefoxOptions.setBinary(firefoxBinary);
+        driver = new FirefoxDriver(firefoxOptions);
 
         String TEST_ACCOUNT_EMAIL = "casderiopus1@gmail.com";
         String TEST_ACCOUNT_PASSWORD = "casdercasder";
