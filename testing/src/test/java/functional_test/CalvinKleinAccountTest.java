@@ -44,7 +44,6 @@ public class CalvinKleinAccountTest {
         (new WebDriverWait(driver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='ck-Button ck-Button__primary cookie-notice__agree-button']")))
                 .click();
-
         (new WebDriverWait(driver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.elementToBeClickable(By.className("header-account__sign-in")))
                 .click();
