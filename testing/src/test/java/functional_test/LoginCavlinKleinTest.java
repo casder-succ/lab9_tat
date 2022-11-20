@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -27,10 +30,14 @@ public class LoginCavlinKleinTest {
 //    }
 
     @Test(description = "Test empty wishlist")
-    void testHomePage() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    void testHomePage() {
 
-        driver = new ChromeDriver();
+//        FirefoxBinary firefoxBinary = new FirefoxBinary();
+//        firefoxBinary.addCommandLineOptions("--headless");
+//        firefoxBinary.addCommandLineOptions("--no-sandbox");
+        System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
+
+        driver = new FirefoxDriver();
 
         String TEST_ACCOUNT_EMAIL = "casderiopus1@gmail.com";
         String TEST_ACCOUNT_PASSWORD = "casdercasder";
